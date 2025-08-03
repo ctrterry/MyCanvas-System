@@ -8,7 +8,7 @@
 
 using namespace std;
 
-const string DISCUSSION_DATA = "/Users/terrychen/Desktop/xCodeProjectFolder/Solution/Solution/Lab6Fixed/Lab6Fixed/discussions.dat";
+const string DISCUSSION_DATA = "discussions.dat";
 
 enum DISCUSSION_MENU_OPTION {
 	DISCUSSION_LIST = '1',

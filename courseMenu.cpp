@@ -110,8 +110,15 @@ void CourseMenu::init() {
             p->setMeetInfo(meetInfo);
             p->setInstructor(instructor);
             // Lab 5 - find and update faculty
-            Faculty* f = facultyMenu.find(p->getInstructor());
-            p->setInstructor(*f);
+            try {
+                Faculty* f = facultyMenu.find(instructor);
+                if (f != nullptr) {
+                    p->setInstructor(*f);
+                }
+            } catch (...) {
+                // If faculty not found, keep the instructor ID as string
+                cout << "Warning: Faculty with ID " << instructor << " not found. Using ID as string." << endl;
+            }
             if(Is_Number(units)){
                 p->setUnits(stoi(units));
             }else{
@@ -209,8 +216,15 @@ void CourseMenu::doAdd() {
     p->setMeetInfo(meetInfo);
     p->setInstructor(instructor);    
     // Lab 5 - find and update faculty
-    Faculty* f = facultyMenu.find(p->getInstructor());
-    p->setInstructor(*f);
+    try {
+        Faculty* f = facultyMenu.find(instructor);
+        if (f != nullptr) {
+            p->setInstructor(*f);
+        }
+    } catch (...) {
+        // If faculty not found, keep the instructor ID as string
+        cout << "Warning: Faculty with ID " << instructor << " not found. Using ID as string." << endl;
+    }
     p->setUnits(stoi(units));
     list->insertEnd(*p);
 }

@@ -11,6 +11,7 @@
 #include <vector>
 #include <cstring>
 #include <string.h>
+#include <iostream>
 using namespace std;
 
 class comparied;

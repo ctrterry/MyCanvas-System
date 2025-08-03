@@ -2,7 +2,7 @@
 #define H_UnorderedArrayListType
   
 #include <iostream>
-#include "ArrayListType.h"
+#include "arrayListType.h"
 #include "searchSortAlgorithms.h"
 
 using namespace std; 

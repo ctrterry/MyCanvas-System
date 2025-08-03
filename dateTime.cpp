@@ -25,18 +25,21 @@ void DateType::setDate(string dateString) {
 	string sdate = dateString.substr(0, pos);
 	pos = sdate.find(FORMAT_SEPARATOR);
     
-  //  cout << "Date String and first end" << sdate.substr(0, pos) << endl;
-	month = stoi(sdate.substr(0, pos));
-  //  cout << "month" << month << endl;
-    
-	sdate = sdate.substr(pos + 1); //skip past the first delimiter
+	try {
+		month = stoi(sdate.substr(0, pos));
+		sdate = sdate.substr(pos + 1); //skip past the first delimiter
 
-	pos = sdate.find(FORMAT_SEPARATOR);
-	day = stoi(sdate.substr(0, pos));
-	sdate = sdate.substr(pos + 1);
+		pos = sdate.find(FORMAT_SEPARATOR);
+		day = stoi(sdate.substr(0, pos));
+		sdate = sdate.substr(pos + 1);
 
-	year = stoi(sdate); //year is all remaining in the string
-
+		year = stoi(sdate); //year is all remaining in the string
+	} catch (...) {
+		// Default values for malformed dates like "0/0/0"
+		month = 1;
+		day = 1;
+		year = 2023;
+	}
 }
 
 DateType& DateType::getDate() {
@@ -99,9 +102,25 @@ void DateTime::setDateTime(string dateTime) {
 	else {
 		stime = dateTime;
 	}
-	hr = stoi(stime.substr(0, 2));
-	min = stoi(stime.substr(3, 2));
-	sec = stoi(stime.substr(6, 2));
+	
+	// Handle malformed time strings
+	try {
+		if (stime.length() >= 8) {
+			hr = stoi(stime.substr(0, 2));
+			min = stoi(stime.substr(3, 2));
+			sec = stoi(stime.substr(6, 2));
+		} else {
+			// Default values for malformed time
+			hr = 0;
+			min = 0;
+			sec = 0;
+		}
+	} catch (...) {
+		// Default values if parsing fails
+		hr = 0;
+		min = 0;
+		sec = 0;
+	}
 }
 
 // Return MM/DD/YYYY HH:MM:SS

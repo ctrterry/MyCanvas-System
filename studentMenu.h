@@ -10,7 +10,7 @@ using namespace std;
 
 enum STUDENT_MENU_OPTION { STUDENT_LIST = '1', STUDENT_VIEW = '2', STUDENT_ADD = '3', STUDENT_EDIT = '4', STUDENT_DELETE = '5', STUDENT_EXIT = 'x' };
 
-const string STUDENT_DATA = "/Users/terrychen/Desktop/xCodeProjectFolder/Solution/Solution/Lab6Fixed/Lab6Fixed/student_data.csv";
+const string STUDENT_DATA = "student_data.csv";
 
 class StudentMenu : public Menu { 
 public:

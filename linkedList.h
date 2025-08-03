@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <cassert>
-#include "NodeType.h"
+#include "nodeType.h"
 #include "linkedListIterator.h"
 
 using namespace std;

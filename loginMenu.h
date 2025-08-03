@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const string USERS_DATA = "/Users/terrychen/Desktop/xCodeProjectFolder/Solution/Solution/Lab6Fixed/Lab6Fixed/users.csv";
+const string USERS_DATA = "users.csv";
 
 enum LOGIN_MENU_OPTION {
 	LOGIN='1',

@@ -283,10 +283,17 @@ void FacultyMenu::doDelete() {
 	list->remove(*pFaculty);
 }
 
-Faculty* FacultyMenu::find(Faculty& f) {
-	int index = list->search(f);	
-	list->retrieveAt(index, f);
-	return &f;
+Faculty* FacultyMenu::find(const string& facultyId) {
+	for (int i = 0; i < list->listSize(); i++) {
+		Faculty f;
+		list->retrieveAt(i, f);
+		if (to_string(f.getId()) == facultyId) {
+			// Create a new Faculty object on the heap
+			Faculty* result = new Faculty(f);
+			return result;
+		}
+	}
+	return nullptr;
 }
 
 /**

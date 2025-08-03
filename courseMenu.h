@@ -8,7 +8,7 @@
 
 using namespace std;
 
-const string COURSE_DATA = "/Users/terrychen/Desktop/xCodeProjectFolder/Solution/Solution/Lab6Fixed/Lab6Fixed/course_data.csv";
+const string COURSE_DATA = "course_data.csv";
 
 enum COURSE_MENU_OPTION {
 	COURSE_LIST='1',

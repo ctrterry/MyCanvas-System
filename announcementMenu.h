@@ -10,7 +10,7 @@
 #include <vector>
 using namespace std;
 
-const string ANNOUNCEMENT_DATA = "/Users/terrychen/Desktop/xCodeProjectFolder/Solution/Solution/Lab6Fixed/Lab6Fixed/announcements.dat";
+const string ANNOUNCEMENT_DATA = "announcements.dat";
 
 enum ANNOUNCEMENT_MENU_OPTION {
 	ANNOUNCEMENT_LIST = '1',

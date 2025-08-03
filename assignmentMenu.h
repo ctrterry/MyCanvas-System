@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const string ASSIGNMENT_DATA = "/Users/terrychen/Desktop/xCodeProjectFolder/Solution/Solution/Lab6Fixed/Lab6Fixed/assignment_data.csv";
+const string ASSIGNMENT_DATA = "assignment_data.csv";
 
 enum ASSIGNMENT_MENU_OPTION {
 	LIST_ALL = '1',	
